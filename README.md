@@ -49,4 +49,62 @@ Other similar application of stack:
 - Evaluation mathematical expressions
 
 
+## Queue
+Queue is a linear data structure where items are inserted from one end and retrived or deleted from the other
+end. Queue is FIFO structure, meaning the first item added to the queue is the first one to be retrived.
+A queue can also be implemented using an array or a list.
+
+Unlike stack, In Queue two pointers are used to keep track of items, a **front** pointer tracks the begining
+of the queue from where the elements are accessed or deleted and a **rear** pointer that tracks the end of the
+queue from where items enter the queue.
+
+### Operations on Queue
+- enqueue: 
+    A enqueue operation adds a new item to the queue. Implementation of enqueue operation is straight forward
+    and we can just append the new item to the underlying structure(list, array) and adjust the **rear**
+    pointer to point to newly appended item.
+- dequeue: 
+    A dequeue operation removes the item pointed by **front** from the queue. It also retrives and returns the item before removing it from the queue.
+    To implement dequeue we need to return the item pointer by front and increment front to point to next
+    item in the queue.
+
+- isFull: 
+    Like in Stack in static or array based implementation it is possible to exhaust the capacity of underling data structure.
+    In such implementation isFull operation is used to check if the queue is full. If rear pointer is equal to
+    max size then the queue is said to be full.
+
+- isEmpty: 
+    Checks if the queue is empty. In array based linear queue this is implemented by comparing front and rear
+    pointer. If front > rear then queue is said to be empty.
+
+
+### Application of Queue
+Queues are mostly used when we need to observe and process multiple events but the events may occur faster
+then they can processed, in such cases a queue is maintained to keep all incomming events until they are
+processed. Since insertion and deletion is performed on two different ends, incomming events does not distrub
+the processing of previously enqueued event.
+
+For example: In a registration system, multiple registration request can come before one registration is
+processed. So, we use queue to store incomming registration requests and process them one by one.
+
+Similarly, in a computer multiple processes may request CPU time but only one can use CPU time at a time, so a
+queue is maintained to stored all the request and service them one by one.
+
+
+### Types of Queue
+- Simple Queue: It is the simplest type of queue and it is the queue we discussed above.
+
+- Circular Queue: If first and last position of a simple queue are connected the resulting queue is a circular
+  queue. It offers better memory usage then the simple queue because when we dequeue an item from a simple
+  queue we simply move to next item but the memory used by recently dequeued item is wasted and never used, by
+  connecting the first and last position in the queue we allowed to use that wasted memory to enqueue new
+  items.
+
+- Priority Queue: In simple queue the first item to be dequed is the one that was enqued first but in certain
+  scenario this might not be the wisest thing to do. For example in the registration system mentioned above we
+  might want to process VIP registrations first. What we have is different priority, when priority of all the
+  events are not equal we need a priority queue.
+
+  A priority queue uses some defined metric/property to determine the priority of items and the item with the
+  highest priority is dequeued first.
 
