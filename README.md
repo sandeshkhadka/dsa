@@ -7,28 +7,27 @@ This repo contains code and explaination about following DS:
 
 ## Stack
 A linear data structure where insertion and retrival of items can only be done from one end. Stack is LIFO
-structre, meaning the last item added to the stack is the first one to be retrived. Stack is generally
+structure, meaning the last item added to the stack is the first one to be retrived. Stack is generally
 implemented using either an array or a list. 
 The last item inserted is commonly reffered to as TOS(Top of Stack).
-
 ### Operations on Stack
-- push
+- push: 
     A push operation pushes or adds a new item to the stack. Implementation of push operation is straight forward
     and we can just append the new item to the underlying structure(list, array) and adjust the TOS to
     point to newly appended item.
-- pop
+- pop: 
     A pop operation removes the TOS from the stack. It also retrives and returns the TOS before removing from the stack.
     To implement the pop operation we just adjus the TOS to point to second last element, in array based
     implementation this can be done by simply decrementing the tos.
-- peek
+- peek: 
    Peek operation retrives the TOS without deleting it from the stack.
 
-- isFull
+- isFull: 
     In static or array based implementation it is possible to exhaust the capacity of underling data structre
     i.e arry. In such implementation isFull operation is used to check if the stack is full. It returns
     boolean to indicate if the stack is full or not.
 
-- isEmpty
+- isEmpty: 
     Checks if the stack is empty.
 
 ### Application of Stack
