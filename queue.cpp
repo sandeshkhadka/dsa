@@ -52,14 +52,17 @@ public:
 
 template <typename T> void print(T a) { std::cout << a << "\t"; }
 int main() {
-  Queue<int> q;
-  q.for_all(print);
-  q.enqueue(0);
-  q.enqueue(1);
-  q.enqueue(2);
-  q.for_all(print);
+  Queue<int> l;
+  for (int i = 2; i < 10; i++) {
+    l.enqueue(i);
+  }
+  l.for_all(print);
   std::cout << std::endl;
-  q.dequeue();
-  q.dequeue();
-  q.for_all(print);
+  l.for_all(print);
+  std::cout << std::endl;
+  for (int i = 0; i < 5; i++) {
+    l.dequeue();
+  }
+  l.for_all(print);
+  std::cout << std::endl;
 }

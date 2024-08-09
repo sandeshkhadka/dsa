@@ -13,6 +13,9 @@ public:
     top++;
     items.push_back(data);
   }
+  /*
+   * pop top element from stack
+   */
   T pop() {
     if (is_empty()) {
       std::cout << "Cannont pop on empty stack";
@@ -36,14 +39,23 @@ public:
       callback(items[i]);
     }
   }
+  /*
+   * retrive top element without popping it
+   */
+  T peek() { return items[top]; }
 };
 template <typename T> void print(T a) { std::cout << a << "\t"; }
 int main() {
+
   Stack<int> s;
-  s.push(10);
-  s.push(20);
+  for (int i = 0; i < 10; i++) {
+    s.push(i);
+  }
   s.for_all(print);
   std::cout << std::endl;
-  s.pop();
+  for (int i = 0; i < 5; i++) {
+    s.pop();
+  }
   s.for_all(print);
+  std::cout << std::endl;
 }
